@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-primary": "#c0c1ff",
+            "on-background": "#191c1e",
+            "surface-container-high": "#e6e8ea",
+            "on-tertiary-fixed-variant": "#334282",
+            "on-primary-fixed": "#07006c",
+            "primary-fixed": "#e1e0ff",
+            "secondary-fixed": "#f0dbff",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#c9d1ff",
+            "outline-variant": "#c7c4d7",
+            "surface-tint": "#494ad6",
+            "surface-bright": "#f8f9fb",
+            "surface-container": "#eceef0",
+            "secondary-container": "#c185fd",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "surface-container-highest": "#e0e3e5",
+            "tertiary-fixed-dim": "#b8c4ff",
+            "outline": "#767586",
+            "on-primary-container": "#d0d0ff",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#ddb8ff",
+            "primary": "#2c29bb",
+            "tertiary-fixed": "#dde1ff",
+            "surface": "#f8f9fb",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-variant": "#e0e3e5",
+            "tertiary": "#303f7f",
+            "tertiary-container": "#485798",
+            "surface-dim": "#d8dadc",
+            "primary-container": "#4647d3",
+            "on-secondary-fixed-variant": "#62259b",
+            "background": "#f8f9fb",
+            "secondary": "#7b41b4",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#2c0051",
+            "on-secondary-container": "#510c8a",
+            "surface-container-low": "#f2f4f6",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#001354",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-primary-fixed-variant": "#2f2dbe",
+            "on-surface-variant": "#464554",
+            "inverse-surface": "#2d3133"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Work Sans"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .diamond-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .diamond-item:nth-child(3n + 1) {
+      grid-column: 1 / span 2;
+      justify-self: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .neo-shadow {
+      box-shadow: 8px 8px 0px 0px #191c1e;
+    }
+
+    .neo-shadow-sm {
+      box-shadow: 4px 4px 0px 0px #191c1e;
+    }
+
+    .neo-shadow:active {
+      transform: translate(4px, 4px);
+      box-shadow: 4px 4px 0px 0px #191c1e;
+    }
+
+    .polka-dot-bg {
+      background-color: #f8f9fb;
+      background-image: radial-gradient(#c9cdcf 2px, transparent 2px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+
+<body
+  class="polka-dot-bg text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+  <main class="pt-20 pb-20 px-6 min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto mb-20">
+      <div class="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
+        <h2
+          class="font-headline font-black text-6xl md:text-9xl tracking-tighter leading-none text-on-surface max-w-2xl">
+          GALLERY
+        </h2>
+        <div class="bg-secondary-container border-4 border-on-surface p-6 neo-shadow max-w-xs rotate-2">
+          <p class="font-label font-bold text-xs uppercase tracking-tighter mb-2">Current Status</p>
+          <p class="font-body font-medium text-sm">Curating the 2024 Neo-Architectural Biennale. 14 new collections
+            added today.</p>
+        </div>
+      </div>
+      <!-- Ticker Component -->
+      <div
+        class="w-full bg-secondary-container border-y-4 border-on-surface py-2 overflow-hidden whitespace-nowrap mb-20">
+        <div class="inline-block animate-marquee">
+          <span class="font-headline font-black uppercase text-xl mx-4">Brutalism</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">Metabolism</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">Constructivism</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">Post-Modernism</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">Deconstructivism</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">College</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+          <span class="font-headline font-black uppercase text-xl mx-4">Others</span>
+          <span class="material-symbols-outlined mx-2">star</span>
+        </div>
+      </div>
+      <!-- Diamond Grid -->
+      <div class="diamond-grid">
+        <!-- Card 1: ABHIVYAKTI -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Monolithic concrete building with sharp geometric angles and deep shadows under a clear blue sky"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnjPNKZX0J3SPDPTyncvBJ6G6KrOb4s426OIwehY6Jj5IWKVAzKqQax3flT3rMMjh1Ht800eQEccO9xSsYPVIQp83vUUdRuhj6DRM_0qItSgwpzZyTmg_OcR_e1KbxoOYSOxtDEv88v3CNDw_FFzJXvCwoMMMTqsCgVAIDr3QoaPnGCZquhWD-wEZTzNSHTOuy-qqzgNy0Tv9WzkwOgPQSqxaI3XcVnNBLUFkHnlvtkTUgiw-r37NfujfbMX-DsN7HCJlVMYjNGu7k" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  01</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">ABHIVYAKTI</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+        <!-- Card 2: TANTRAFIESTA -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Brutalist apartment complex with modular concrete units and repetitive geometric patterns in morning light"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA917yCgA-iYybOzbpivs6DzNUFNWAHSaYrgs2EJZeYPsvfCQcLUZ3sfd7zyPahEyADr4cFqULzxolgSy-SNAaX743CDB37YqVIa3dVkBgrj7gPEc4uj-v3UL7290pcaC2XJ_81Ar2XRvMdXkZiAcAx0ShLjsLUr9y-_6Z4kNrXcCrb_pB5kqpoq8HCmSI5ghcEEqFAFXPJvDEPyXPx7JlDTYDBp850-MYTgyKRvi19BrGm7VPUkSl-xl_XlynHTX5fCWHmC6ncXu-i" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  02</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">TANTRAFIESTA</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+        <!-- Card 3: E-SUMMIT -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Futuristic architectural glass structures with purple and blue neon reflections at twilight"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcSnzWfm9OmXJwTvbRGIFSv0QAGcynac257NOoYPnvmq2eMiHQpAPd3qF3ujqdYEtt7gc5datuaXEuSR6HI56b8L2t907I2sp2BENhuTRCpLJrHGQn-L3ufrBF2kPakY6M_CjKI41aheUg0pfGOWDjFJXobPLXT2WLLVodOpFzMWXBH5yMhCnUK_QgfSFVfL0tSWHuRAjoQR1tLdh9Cp41qyyvzelD8RpmSzDEJ29Mw7R9uUHk-nYn2EohyMiJVxPRg1C8Y9pKRfXQ" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  03</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">E-SUMMIT</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+        <!-- Card 4: KSHITIJ -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Industrial minimalist interior with exposed steel beams and large floor to ceiling windows overlooking a city"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoldEkV9dXDIQChu8RgOzX32W1g4N8jkoI6eSISMSaLIHAXAxY4o-WIh4TVIJQK-BoE5BhF1RL_biNSndRKKm47Sw2Vq8kQ8zb6SyJVKvSdwWY57cBu2Oh5_48QnJxYQZmuYQ_zfOqVJ5C4ioCbDTh9hFa7vdDZO8ETcXgbwZkKxb_kVk4ruBNz8KQ3vR5FqlQlDEEN5vnzLu_35aOPqpRqsv56VlQqgY7OY5rlE-lmZuPWkYCw_fQNiDmfvH5GPfw58Lu8sZO-ets" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  04</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">KSHITIJ</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+        <!-- Card 5: COLLEGE -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="College campus with modern architectural design"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoWbw4sTC_JOoiV_HMKNZl7c6pN5FE6GGfRGrYvF3OT7ef5kiVGY71Ad3A9jgECf9kFzWd6o2e63dCEimWviFhWOPFB7oE2RpW24tJdpGLCTKSkjUB_UW8nhQoqWpYwt_7r32S3paE9LZ_VJpCzTvZGkfT2ud17dKPI-v_VHtVWueDKwHCJ1EuRP8ik4RtRki61Um1GuJQCv0sg9B58miqp7wdE_hGrZZZzrBrtTeAlkXVl31EYKam2fKCbktnPLPTfEEz33mvZws" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  05</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">COLLEGE</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+        <!-- Card 6: OTHERS -->
+        <a href="gallery.html" class="diamond-item w-full block">
+          <div
+            class="group relative border-4 border-on-surface p-4 neo-shadow transition-transform hover:-translate-y-2"
+            style="background-color: #a5b4fc;">
+            <div class="aspect-video bg-surface overflow-hidden border-2 border-on-surface mb-4">
+              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Other minimalist architectural structure"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwYpDMTYDFT3O2Ibumq5R4C1V1_NHSSWLxVKGm_XyTCTUIdQ4J7VgykjHj6bhmsmux9D9zMbBDbfPN-rrv19sYR6hC8cNo6gbM-VJWeve293d6m2ztean8URdewWoVD0LeU6ARWESJgQc0PEIQVq4Yv10N1eIC5U3lJmux6d5tVUb3qzj1sAgF_8YlbXoW0Nv3WRRB3gcDGGCtiKnf8t4nx1VfD5qzd6apmyNsPCd4s2tURlcymlf3Bz-foZkDhGJO6GuVVw4AtUE" />
+            </div>
+            <div class="flex justify-between items-end">
+              <div>
+                <span
+                  class="font-label text-[10px] font-black uppercase tracking-widest text-on-primary-container mb-1 block">Collection
+                  06</span>
+                <h3 class="font-headline font-black text-2xl uppercase tracking-tighter text-white">OTHERS</h3>
+              </div>
+              <span class="material-symbols-outlined text-white text-4xl">arrow_outward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section
+      class="max-w-7xl mx-auto mt-32 bg-primary border-4 border-on-surface p-12 relative overflow-hidden neo-shadow">
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-on-primary">
+          <h2 class="font-headline font-black text-5xl uppercase tracking-tighter mb-4">ADD IMAGES</h2>
+          <p class="font-body font-medium text-lg max-w-md">Join the ranks of the digital architects. We accept
+            structural masterpieces that challenge the grid.</p>
+        </div>
+        <button
+          class="bg-surface text-on-surface font-headline font-black uppercase tracking-widest px-10 py-6 border-4 border-on-surface neo-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">ADD
+          IMAGES</button>
+      </div>
+      <!-- Decorative circle -->
+      <div class="absolute -right-20 -bottom-20 w-64 h-64 border-[12px] border-on-primary/20 rounded-full"></div>
+    </section>
+  </main>
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</body>
+
+</html>
