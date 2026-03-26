@@ -100,54 +100,14 @@
         }
 
         body {
-            background-color: #f5f7f9;
-            background-image: radial-gradient(#c9cdcf 1px, transparent 0);
-            background-size: 24px 24px;
+            background-image: url('../imgbg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
         }
 
-        /* Abstract Background Elements */
-        .neo-corner {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            z-index: -1;
-        }
 
-        .corner-tl {
-            top: 0; left: 0;
-            clip-path: polygon(0 0, 100% 0, 0 100%);
-            background: 
-                linear-gradient(135deg, #C084FC 0, #C084FC 200px, transparent 200px),
-                repeating-linear-gradient(45deg, transparent 0 20px, #ffffff 20px 30px),
-                #C084FC;
-        }
-
-        .corner-tr {
-            top: 0; right: 0;
-            clip-path: polygon(0 0, 100% 0, 100% 100%);
-            background: 
-                linear-gradient(225deg, #4647D3 0, #4647D3 200px, transparent 200px),
-                repeating-linear-gradient(-45deg, transparent 0 20px, #ffffff 20px 30px),
-                #4647D3;
-        }
-
-        .corner-bl {
-            bottom: 0; left: 0;
-            clip-path: polygon(0 0, 0 100%, 100% 100%);
-            background: 
-                linear-gradient(45deg, #4647D3 0, #4647D3 200px, transparent 200px),
-                repeating-linear-gradient(-45deg, transparent 0 20px, #ffffff 20px 30px),
-                #4647D3;
-        }
-
-        .corner-br {
-            bottom: 0; right: 0;
-            clip-path: polygon(100% 0, 0 100%, 100% 100%);
-            background: 
-                linear-gradient(315deg, #C084FC 0, #C084FC 200px, transparent 200px),
-                repeating-linear-gradient(45deg, transparent 0 20px, #ffffff 20px 30px),
-                #C084FC;
-        }
 
         .gallery-container {
             perspective: 2500px;
@@ -217,11 +177,7 @@
 
 <body
     class="text-on-background font-body selection:bg-brutal-accent selection:text-black overflow-hidden h-screen w-screen">
-    <!-- Background Design Elements -->
-    <div class="neo-corner corner-tl"></div>
-    <div class="neo-corner corner-tr"></div>
-    <div class="neo-corner corner-bl"></div>
-    <div class="neo-corner corner-br"></div>
+    <!-- Background Set In Body -->
     <main class="relative h-screen w-screen flex items-center justify-center overflow-hidden">
         <!-- Scrolling Canvas -->
         <div class="gallery-container w-[200vw] h-full flex items-center justify-center pointer-events-auto"
@@ -248,8 +204,10 @@
             </svg>
             <div class="flex flex-col items-center select-none cursor-pointer relative z-10" id="autoplay-toggle">
                 <span class="font-headline text-4xl font-black text-black tracking-tighter" id="current-index">01</span>
-                <span class="font-label text-[10px] font-bold tracking-widest text-neutral-600 uppercase mt-1 mb-1">/ 25</span>
-                <span class="material-symbols-outlined text-black font-black transition-transform hover:scale-110" id="play-pause-icon" style="font-size: 24px;">play_arrow</span>
+                <span class="font-label text-[10px] font-bold tracking-widest text-neutral-600 uppercase mt-1 mb-1">/
+                    25</span>
+                <span class="material-symbols-outlined text-black font-black transition-transform hover:scale-110"
+                    id="play-pause-icon" style="font-size: 24px;">play_arrow</span>
             </div>
         </div>
     </div>
@@ -454,7 +412,7 @@
             if (!isAutoplay) return;
             stripEl.style.scrollSnapType = 'none';
             stripEl.scrollLeft += 8.5;
-            
+
             if (stripEl.scrollLeft >= stripEl.scrollWidth - stripEl.clientWidth - 2) {
                 stripEl.scrollLeft = 0;
             }
@@ -464,7 +422,7 @@
         autoplayToggle.addEventListener('click', (e) => {
             if (e.target.closest('#dot-handle')) return;
             isAutoplay = !isAutoplay;
-            
+
             if (isAutoplay) {
                 playBtn.textContent = 'pause';
                 autoplayRaf = requestAnimationFrame(autoplayStep);
@@ -476,17 +434,17 @@
         });
 
         const stopAutoplay = () => {
-             if (isAutoplay) {
-                 isAutoplay = false;
-                 playBtn.textContent = 'play_arrow';
-                 cancelAnimationFrame(autoplayRaf);
-                 stripEl.style.scrollSnapType = 'x mandatory';
-             }
+            if (isAutoplay) {
+                isAutoplay = false;
+                playBtn.textContent = 'play_arrow';
+                cancelAnimationFrame(autoplayRaf);
+                stripEl.style.scrollSnapType = 'x mandatory';
+            }
         };
-        
-        stripEl.addEventListener('touchstart', stopAutoplay, {passive: true});
+
+        stripEl.addEventListener('touchstart', stopAutoplay, { passive: true });
         stripEl.addEventListener('mousedown', stopAutoplay);
-        stripEl.addEventListener('wheel', stopAutoplay, {passive: true});
+        stripEl.addEventListener('wheel', stopAutoplay, { passive: true });
     </script>
 </body>
 
